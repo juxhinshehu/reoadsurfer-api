@@ -9,4 +9,4 @@
 
 ### migrate the db
 
-### php bin/console doctrine:fixtures:load
+### seed the db with dummy data `php bin/console doctrine:fixtures:load`
