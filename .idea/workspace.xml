@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="510fed7d-7e55-4738-ae61-ef84e0c1cb50" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/roadsurfer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/roadsurfer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EquipmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EquipmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EquipmentQuantityPerDayRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EquipmentQuantityPerDayRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EquipmentQuantityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EquipmentQuantityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/EquipmentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EquipmentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/StationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/StationService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +159,7 @@
       <workItem from="1621758153218" duration="5269000" />
       <workItem from="1621781679450" duration="8417000" />
       <workItem from="1621833781913" duration="4924000" />
-      <workItem from="1621948623572" duration="5234000" />
+      <workItem from="1621948623572" duration="6186000" />
     </task>
     <servers />
   </component>
@@ -209,10 +202,10 @@
     </state>
     <state x="2416" y="233" key="run.anything.popup/0.0.1536.824/1920.0.1680.1010@1920.0.1680.1010" timestamp="1621763440316" />
     <state x="453" y="190" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1621834219281" />
-    <state x="460" y="177" width="672" height="554" key="search.everywhere.popup" timestamp="1621953835866">
+    <state x="460" y="177" width="672" height="554" key="search.everywhere.popup" timestamp="1621959361181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2423" y="217" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1680.1010@1920.0.1680.1010" timestamp="1621764208553" />
-    <state x="460" y="177" width="672" height="554" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621953835866" />
+    <state x="460" y="177" width="672" height="554" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621959361181" />
   </component>
 </project>

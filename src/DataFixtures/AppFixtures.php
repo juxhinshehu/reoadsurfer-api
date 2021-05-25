@@ -160,12 +160,6 @@ class AppFixtures extends Fixture
         $july5MunchenSheets->setDay(new \DateTime("2021-07-05 10:00:00"));
         $manager->persist($july5MunchenSheets);
 
-        $july6MunchenSheets = new EquipmentQuantityPerDay();
-        $july6MunchenSheets->setEquipmentQuantity($eq3);
-        $july6MunchenSheets->setBookingsCounter(3);
-        $july6MunchenSheets->setDay(new \DateTime("2021-07-07 10:00:00"));
-        $manager->persist($july6MunchenSheets);
-
         $july1MunchenWC = new EquipmentQuantityPerDay();
         $july1MunchenWC->setEquipmentQuantity($eq4);
         $july1MunchenWC->setBookingsCounter(1);
@@ -195,12 +189,6 @@ class AppFixtures extends Fixture
         $july5MunchenWC->setBookingsCounter(1);
         $july5MunchenWC->setDay(new \DateTime("2021-07-05 10:00:00"));
         $manager->persist($july5MunchenWC);
-
-        $july6MunchenWC = new EquipmentQuantityPerDay();
-        $july6MunchenWC->setEquipmentQuantity($eq4);
-        $july6MunchenWC->setBookingsCounter(1);
-        $july6MunchenWC->setDay(new \DateTime("2021-07-07 10:00:00"));
-        $manager->persist($july6MunchenWC);
 
         $july1MadridSheets = new EquipmentQuantityPerDay();
         $july1MadridSheets->setEquipmentQuantity($eq1);
@@ -232,12 +220,6 @@ class AppFixtures extends Fixture
         $july5MadridSheets->setDay(new \DateTime("2021-07-05 10:00:00"));
         $manager->persist($july5MadridSheets);
 
-        $july6MadridSheets = new EquipmentQuantityPerDay();
-        $july6MadridSheets->setEquipmentQuantity($eq1);
-        $july6MadridSheets->setBookingsCounter(4);
-        $july6MadridSheets->setDay(new \DateTime("2021-07-07 10:00:00"));
-        $manager->persist($july6MadridSheets);
-
         $july1MadridWC = new EquipmentQuantityPerDay();
         $july1MadridWC->setEquipmentQuantity($eq2);
         $july1MadridWC->setBookingsCounter(1);
@@ -267,12 +249,6 @@ class AppFixtures extends Fixture
         $july5MadridWC->setBookingsCounter(1);
         $july5MadridWC->setDay(new \DateTime("2021-07-05 10:00:00"));
         $manager->persist($july5MadridWC);
-
-        $july6MadridWC = new EquipmentQuantityPerDay();
-        $july6MadridWC->setEquipmentQuantity($eq2);
-        $july6MadridWC->setBookingsCounter(1);
-        $july6MadridWC->setDay(new \DateTime("2021-07-07 10:00:00"));
-        $manager->persist($july6MadridWC);
 
         $manager->flush();
     }
