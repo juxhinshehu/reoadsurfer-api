@@ -5,8 +5,8 @@
 
 ### configure `DATABASE_URL` field in .env
 
-### php bin/console doctrine:schema:create
-### php bin/console make:migration
-### php bin/console doctrine:migrations:migrate
+### make sure that `extension=pdo_mysql` in php.ini is not commented 
+
+### migrate the db
 
 ### php bin/console doctrine:fixtures:load
