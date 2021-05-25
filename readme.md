@@ -1,11 +1,12 @@
-### Installation manual
+## Installation manual
 
-1. get from github
-2. composer update
- php bin/console doctrine:database:create
-php bin/console make:entity
+### git clone https://github.com/juxhinshehu/reoadsurfer-api.git
+### composer update
 
-3. php bin/console make:migration
-4. php bin/console doctrine:migrations:migrate
+### configure `DATABASE_URL` field in .env
 
-php bin/console doctrine:fixtures:load
+### php bin/console doctrine:schema:create
+### php bin/console make:migration
+### php bin/console doctrine:migrations:migrate
+
+### php bin/console doctrine:fixtures:load
