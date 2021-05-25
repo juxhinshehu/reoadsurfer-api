@@ -2,22 +2,26 @@
 
 namespace App\Controller;
 
+use App\Entity\Station;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\EquipmentQuantityPerDayRepository;
-use App\Service\EquipmentService;
+use App\Service\StationService;
 
 class StationController extends AbstractController
 {
     /**
      * @Route("/stations/", name="stations")
      */
-    public function all($stationId, $day, EquipmentService $equipmentService, EquipmentQuantityPerDayRepository $repository): Response
+    public function all(StationService $stationService): Response
     {
-        $availabilities = $equipmentService->getAvailabilities($stationId, $day, $repository, $this->get('serializer'));
+        $repository = $this->getDoctrine()->getRepository(Station::class);
+        $stations = $stationService->all($repository);
 
-        return new JsonResponse($availabilities);
+        $serializer = $this->get('serializer');
+        $data = $serializer->serialize($stations, 'json');
+
+        return new Response($data);
     }
 }

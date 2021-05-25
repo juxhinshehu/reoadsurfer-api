@@ -2,30 +2,45 @@
 
 namespace App\Service;
 use App\Repository\EquipmentQuantityPerDayRepository;
+use App\Repository\EquipmentQuantityRepository;
 
 class EquipmentService {
     /**
      * @param $stationId
      * @param $day
-     * @param EquipmentQuantityPerDayRepository $repository
+     * @param EquipmentQuantityPerDayRepository $equipmentQuantityPerDayRepo
+     * @param EquipmentQuantityRepository $equipmentQuantityRepo
      * @return array
      * @throws \Exception
      */
-    public function getAvailabilities($stationId, $day, EquipmentQuantityPerDayRepository $repository)
+    public function getAvailabilities($stationId, $day, EquipmentQuantityPerDayRepository $equipmentQuantityPerDayRepo, EquipmentQuantityRepository $equipmentQuantityRepo)
     {
         try {
-            $availabilities = $repository->getAvailabilities($stationId, $day);
+            $availabilities = [];
 
-            $availabilitiesFormatted = [];
-            foreach ($availabilities as $availability) {
-                $availabilitiesFormatted[] = [
-                    'name' => $availability->getEquipmentQuantity()->getEquipment()->getName(),
-                    'bookingsCounter' => $availability->getBookingsCounter(),
-                    'available' => $availability->getEquipmentQuantity()->getQuantity() -  $availability->getBookingsCounter()
+            $equipmentQuantitiesPerDay = $equipmentQuantityPerDayRepo->filterBy($stationId, $day);
+
+            foreach ($equipmentQuantitiesPerDay as $equipmentQuantityPerDay) {
+                $availabilities[] = [
+                    'name' => $equipmentQuantityPerDay->getEquipmentQuantity()->getEquipment()->getName(),
+                    'bookingsCounter' => $equipmentQuantityPerDay->getBookingsCounter(),
+                    'available' => $equipmentQuantityPerDay->getEquipmentQuantity()->getQuantity() -  $equipmentQuantityPerDay->getBookingsCounter()
                 ];
             }
 
-            return $availabilitiesFormatted;
+            if (empty($availabilities)) {
+                $equipmentQuantities = $equipmentQuantityRepo->filterBy($stationId);
+
+                foreach ($equipmentQuantities as $equipmentQuantity) {
+                    $availabilities[] = [
+                        'name' => $equipmentQuantity->getEquipment()->getName(),
+                        'bookingsCounter' => 0,
+                        'available' => $equipmentQuantity->getQuantity()
+                    ];
+                }
+            }
+
+            return $availabilities;
         } catch (\Exception $exception) {
             throw new \Exception($exception->getMessage());
         }

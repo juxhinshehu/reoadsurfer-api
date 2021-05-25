@@ -23,7 +23,7 @@ class EquipmentQuantityPerDayRepository extends ServiceEntityRepository
         parent::__construct($registry, EquipmentQuantityPerDay::class);
     }
 
-    public function getAvailabilities($stationId, $day)
+    public function filterBy($stationId, $day)
     {
         $dql = 'SELECT eqd FROM App\Entity\EquipmentQuantityPerDay eqd
                 LEFT JOIN eqd.equipmentQuantity eq

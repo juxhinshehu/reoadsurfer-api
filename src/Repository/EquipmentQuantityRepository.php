@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\EquipmentQuantity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -14,37 +15,24 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class EquipmentQuantityRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    private $entityManager;
+
+    public function __construct(ManagerRegistry $registry, EntityManagerInterface $entityManager)
     {
+        $this->entityManager = $entityManager;
+
         parent::__construct($registry, EquipmentQuantity::class);
     }
 
-    // /**
-    //  * @return EquipmentQuantity[] Returns an array of EquipmentQuantity objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function filterBy($stationId)
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $dql = 'SELECT eq, s, e FROM App\Entity\EquipmentQuantity eq
+                LEFT JOIN eq.station s
+                LEFT JOIN eq.equipment e
+                WHERE s.id = ?1';
 
-    /*
-    public function findOneBySomeField($value): ?EquipmentQuantity
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $query = $this->entityManager->createQuery($dql);
+        $query->setParameter(1, $stationId);
+        return $query->getResult();
     }
-    */
 }
