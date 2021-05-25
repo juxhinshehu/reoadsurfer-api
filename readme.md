@@ -5,7 +5,7 @@
 
 ### configure `DATABASE_URL` field in .env
 
-### make sure that `extension=pdo_mysql` in php.ini is not commented 
+### If you are using mysql make sure that `extension=pdo_mysql` in php.ini is not commented 
 
 ### migrate the db
 
