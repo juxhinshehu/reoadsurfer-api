@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Nr Booked</th>
+        <th scope="col">Nr Available</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for availability in availabilities %}
+        <tr>
+            <td>{{ availability.name }}</td>
+            <td>{{ availability.bookingsCounter }}</td>
+            <td>{{ availability.available }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
